@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let obj =Object()
+
+        /* 
+            属性名
+                -通常属性名就是一个字符串，所以属性名可以是任何值，没有什么特殊要求
+                但是如果你的属性名太特殊了，不能直接使用，需要使用[]来设置
+                虽然如此，但是我们还是强烈建议属性名也按照标识符的规范命名
+
+                -也可以用符号（symbol)作为属性名,来添加属性
+                    获取这个属性时，也必须使用symbol
+                    使用symbol添加的属性，通常是那些不希望被外界访问的属性
+
+                -使用[]去操作属性时，可以使用变量
+
+            属性值
+                -对象的属性值可以是任意的数据类型，也可以是一个对象
+
+            使用typeof检查一个对象时，会返回object
+        */
+
+        obj.name ="孙悟空"
+        //obj.if ="哈哈"//不建议
+        //obj.["112$&^&"]="呵呵"//不建议
+
+        let mySymbol = Symbol()
+        let newSymbol = Symbol() //不能再重新创建一个对象存储符号
+        //使用symbol作为属性名
+       // obj[mySymbol] = "通过symbol添加的属性"
+        //console.log(obj[newSymbol])//失效了，会显示undefined，原先在哪里存储就在哪里取才有效
+        
+        //添加属性
+        obj.age =18
+        obj["gender"]="男"
+
+        console.log(obj.gender)//男
+        console.log(obj["gender"])//男
+
+        let str ="adress"
+
+        obj[str]="花果山"//等价于obj["address"]="花果山"
+
+        console.log(obj)
+
+        obj.str="哈哈"//这个写法是错的，使用.的形式添加属性时，不能使用变量，等价于obj["str"],应该为obj.adress
+
+        obj.a="hello"
+        obj.b=true
+        obj.d=123n
+        obj.f=Object()
+        obj.f.name="猪八戒"//相当于往塑料袋里再套了一个塑料袋
+        obj.f.age=28
+
+        //console.log(obj.f.name)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const arr=["孙悟空","猪八戒","沙和尚"]
+
+        const arr2=arr//不是复制
+        arr2[0]="唐憎"//因为arr和arr2指向的都是同一个对象，所以这两个数组的第一个值都会变成孙悟空
+
+        //如何去复制一个对象，复制必须要产生新的对象
+        //当调用slice时，会产生一个新的数组对象，从而完成对数组的复制
+        const arr3=arr.slice()
+
+        //console.log(arr===arr2)//true
+        //console.log(arr2)
+
+        arr3[0]="唐憎"//只会改变arr[3]的第一个值
+
+        console.log(arr)
+        console.log(arr3===arr)//false
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

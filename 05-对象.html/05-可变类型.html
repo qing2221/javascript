@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            原始值都属于不可变类型，一旦创建就无法修改
+            在内存中不会创建重复的原始值
+        */
+       let a = 10//变量a存储的是指向10的内存地址
+       let b = 10//先去找有没有指向10的内存地址，没有的话才去新建一个
+       //当我们为一个变量重新赋值时，绝对不会影响其他变量
+       a = 12  //将变量a指向新的指向12的内存地址，而原始值10没有发生任何改变
+       
+
+       //console.log("a=",a) 
+       //console.log("b=",b)
+
+       /* 
+            对象属于可变类型
+            对象创建完成后，可以任意地添加删除修改对象中的属性
+            注意：
+                当对两个对象进行相等或全等比较时，比较的是对象的内存地址
+                如果有两个变量同时指向一个对象，
+                    通过一个变量修改对象时，对另外一个变量也会产生影响
+       */
+
+       //let obj ={name:"孙悟空"}
+       let obj =Object()//创建一个新对象
+       obj.name ="孙悟空"
+       obj.age=18
+
+       let obj2 = Object()
+       let obj3 = Object()//每次创建的都是一个新对象
+
+       //console.log(obj2 == obj3)//false
+
+       let obj4 = obj//让obj4指向和obj一样的对象
+
+       obj4.name ="猪八戒"//当修改一个对象时，所有指向该对象的变量都会受到影响
+
+       console.log("obj",obj)
+       console.log("obj4",obj4)
+       console.log(obj===obj4)//true
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

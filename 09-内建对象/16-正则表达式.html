@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            re.exec()
+                -获取字符串中符合正则表达式的内容
+            g表示全局匹配
+                -要在整个字符串范围内进行全局搜索，而不是在找到第一个匹配后就停止。
+        */
+       
+        let str="abcaecafcacc"
+
+        //提取出str中符合axc格式的内容
+
+        //g表示全局匹配，每调用一次就会匹配一个新的内容，第一次abc,第二次aec...
+        let re=/a(([a-z])c)/ig //内容先是整体，然后第一个大括号，其次里面的小括号
+
+        let result=re.exec(str)
+
+        //console.log(result)
+
+        //有值就执行
+        while(result){
+            console.log(result[0],result[1],result[2])
+            result=re.exec(str)//最后一次是null，while是false，不执行
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

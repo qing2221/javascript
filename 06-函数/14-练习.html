@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            先调用函数fn，看到a=2，给a赋值先要找到a,有声明a就有a，函数作用域没有a，
+            就到外层去，找到了a，这时候a就是全局a，也就是给全局a赋值为2，所有的a都是2
+        */
+       
+        //练习1
+        var a=1
+        function fn(){
+            a=2
+            console.log(a)//2
+        }
+        fn()
+        console.log(a)//2
+
+        //变量和函数的提升同样适用于函数作用域
+        //练习2
+        var a=1
+        function fn(){
+            console.log(a)//undefined
+            var a=2
+            console.log(a)//2
+        }
+        fn()
+        console.log(a)//1
+
+        //练习3
+        var a=1
+        function fn(){
+            console.log(a)//1
+             a=2
+            console.log(a)//2
+        }
+        fn()
+        console.log(a)//2
+
+        //定义形参就相当于在函数中声明了对应的变量，但是没有赋值
+        //练习4
+        var a=1
+        function fn(a){
+            console.log(a)//undefined
+            a=2
+            console.log(a)//2
+        }
+        fn()
+        console.log(a)//1
+
+        //练习5
+        var a=1
+        function fn(a){
+            console.log(a)//10
+            a=2
+            console.log(a)//2
+        }
+        fn(10)
+        console.log(a)//1
+
+        //练习6
+        var a=1
+        function fn(){
+            console.log(a)//1
+            a=2
+            console.log(a)//2
+        }
+        fn(a)//传的是a的值，也就是全局变量中赋值的1
+        console.log(a)//1
+
+        //练习7
+        console.log(a)//f a(){alert(2)} 声明和函数都会被提升，只有函数可以赋值，所以打印函数值
+
+        var a=1
+
+        console.log(a)//1
+        
+        function a(){
+            alert(2) //被提升提前执行，后续再到这行代码就失效了
+        }
+        
+        console.log(a)//1
+        
+        var a=3
+
+        console.log(a)//3
+
+        var a=function(){
+            alert(4)
+        }
+
+        console.log(a)//f(){alert(4)}
+
+        var a//这个声明失效，只有第一个声明了a的有用，重复声明都会失效
+
+        console.log(a)//f(){alert(4)}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            1. test方法
+                - 就像一个小侦探，它只是看一下字符串里有没有符合正则表达式模式的部分。
+                 一旦找到就喊“有啦（true）”，找不到就说“没有（false）”，找到就不继续找啦。
+            2. exec方法
+                  - 也是个侦探，但更仔细。它不仅看有没有符合的部分，
+                  找到后还会把这个部分（还有正则表达式里括号圈起来的小部分）拿出来给你看，
+                  用一个数组装着。要是没找到，就两手空空（返回null）。
+
+        练习题：
+            dsjhfoij17841992138djbvj13138672088dihi15622275652df
+
+        用自己的语言来把它描述出来
+            先寻找规律 第二位数是0，1，2都是些特殊号码，普通人在3-9之间
+                1  3到9之间  任意数字 x 9
+
+        */
+       let re=/1[3-9]\d{9}/g
+
+       re=/(1[3-9]\d)\d{4}\(d{4})/g
+
+       let str="dsjhfoij17841992138djbvj13138672088dihi15622275652df"
+
+       let result
+
+       while((result=re.exec(str))){
+        console.log(result[0],result[1],result[2])
+        console.log(result[1]+"****"+result[2])
+       }
+
+       re=/^[3-9]\d{9}$/
+
+       console.log(re.test("1726736877"))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

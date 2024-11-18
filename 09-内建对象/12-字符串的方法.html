@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            字符串：
+                -字符串其本质就是一个字符数组
+                -"hello"--["h","e","l","l","o"]
+                字符串的很多方法都和数组是非常相似的
+                -属性和方法：
+                    length 获取字符串的长度
+                    字符串[索引] 获取指定位置的字符
+                    str.at() (试验方法)
+                        -根据索引获取字符，可以接受负索引
+                    str.charAt()
+                        -根据索引获取字符，不支持负索引
+                    str.concat()
+                        -用来连接两个或多个字符串
+                    str.includes()
+                        用来检查字符串中是否包含某个内容
+                            有返回true
+                            没有返回false
+                    str.indexOf()
+                    str.lastIndexOf()
+                        -查询字符串是否包含某个内容
+                    str.startsWith()
+                        -检查一个字符是否以指定内容开头
+                    str.endsWith()
+                        -检查一个字符是否以指定内容结尾
+                    str.padStart()
+                    str.padEnd()
+                        -通过添加指定的内容，是字符串保持某个长度
+                    str.replace()
+                        -使用一个新字符串替换一个指定内容
+                    str.replaceAll()
+                        -使用一个新字符串替换所有指定内容
+                    str.slice()
+                        -对字符串进行切片
+                    str.substring()
+                        -截取字符串
+                    str.split()
+                        -用来将一个字符串拆分成一个数组
+                    str.toLowerCase()
+                        -将字符串转换为小写
+                    str.toUpperCase()  
+                        -将字符串转换为大写
+                    str.trim()
+                        -去除前后空格
+                    str.trimStart()
+                        -去除开始空格
+                    srr.trimEnd()
+                        -去除结束空格
+
+                    
+        */
+       let str='hello'
+
+       console.log(str[0])
+
+       for(let char of str){
+            console.log(char)
+       }
+
+       console.log(str.at(0))
+       console.log(str.charAt(0))
+
+       str="hello hello how are you"
+
+       console.log(str.includes("how",13))//第二个数表示从索引位置开始数
+
+       console.log(str.endsWish("you"))
+
+       str="100"
+
+       console.log(str.padStart(7,"0"))
+
+       str="hello hello how are you"
+
+       let result=str.replace("hello","abc")//只会替换一个
+       result=str.replaceAll("hello","abc")//替换所有的
+
+       console.log(str)//还是原来的数，原str不会被替换掉
+       console.log(result)//这个才会显示替换的值
+
+       result=str.slice(12,15)//索引包括12，不包括15
+       //下面两行代码交换数字，实现效果也一样，substring会识别大小/交换
+       result=str.substring(12,15)
+       result=str.substring(15,12)//如果是slice则取不到
+
+       str="abc@dhk@jhwj"//["abc","dhk","jhwj"]
+
+       result=str.split("@")//根据@去拆分str
+       result=str.join()//将数组连成字符串
+
+       str="abcdABCD"
+    
+       result=str.toLowerCase()
+
+       str="    ab  c "
+
+       result=str.trimStart()
+
+       console.log(result)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
