@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            if-else语句
+                语法:
+                    if(条件表达式){
+                        语句...
+                    }else{
+                        语句...
+                    }
+                    
+            if-else if-else语句
+                语法:
+                    if(条件表达式){
+                        语句...
+                    }else if(条件表达式){
+                        语句...
+                    }else if(条件表达式){
+                        语句...
+                    }else if(条件表达式){
+                        语句...
+                    }else if(条件表达式){
+                        语句...
+                    }else{
+                        语句...
+                    }
+        注意：
+                if-else if-else语句中只会有一个代码块会被执行
+                一旦有执行的代码块，下边的条件都不会被继续判断了
+                所以一定要注意，条件的编写顺序
+        */
+       let age = 70
+      /*  if(age >= 60){
+            alert('你已经退休了')
+       }else{
+            alert('你还没有退休')
+       } */
+
+       if(age >= 100){
+            alert('你是一个长寿的人')
+       }else if(age >= 80) {
+            alert('你比楼上那位还年轻不少')
+       }else if(age >=60) {
+            alert('你已经退休了')
+       }else if(age >=30){
+            alert('你已经步入中年了')
+       }else if(age >= 18) {
+             alert('你已经成年了')
+       }else{
+            alert('你还未成年')
+       }
+
+       /* 
+            prompt()可以用来获取用户输入的内容
+            它会将用户输入的内容以字符串的形式返回，可以通过变量来接收
+       */
+      let num = +prompt('请输入一个整数:')
+      //num=+num
+      alert(typeof num)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

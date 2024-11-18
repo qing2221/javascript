@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //元的话说的就是操作数
+/*         1+1  + 二元运算符
+        typeof a   typeof 一元运算符 */
+
+        /* 
+        一元的加减
+            + 正号 不会改变数值的符号
+            - 负号 可以对数值进行符号位取反
+
+            当我们对非数值类型进行正负运算时，会将其转换为数值然后再运算
+         */
+
+         let a=-10
+         a=-a//10
+
+         let b='123'
+         b=+b//等价于b=Number(b) 隐式类型将字符串转换为数值
+
+         console.log(typeof b,b)//number,123
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

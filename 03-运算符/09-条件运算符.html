@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            条件运算符
+                条件表达式  ？表达式 : 表达式2
+                 执行顺序-
+                        条件运算符在执行时，会先对条件表达式进行求值判断，
+                        如果结果为true，则执行表达式1
+                        如果结果为false，则执行表达式2
+        */
+
+        //false ? alert(1):alert(2) 将会弹出内容是数字2的警告窗
+
+        let a = 100
+        let b = 200
+        a > b ? alert("a大") : alert("b大")
+
+        let max = a > b ? a : b
+        alert(max)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

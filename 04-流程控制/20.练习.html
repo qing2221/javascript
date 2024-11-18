@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            问题：如何修改代码，提升其性能
+
+            求36的质数，先看它的因数，找规律，避免1-35都要找
+            举个例子：36的因数 都是成对出现的 
+            1 36
+            2 18
+            3 12
+            4 9
+            6 6 也就是到根号36结束查找，因为后面大的数又开始重复了
+            
+        */
+
+        //开始一个计时器
+        console.time('质数练习')
+
+        for(let i=2;i<100;i++){
+            let flag =true
+            
+            for(let j=2;j<=i**.5;j++){
+                if(i%j===0){
+                    flag=false
+                    //进入判断说明i一定不是质数，后续检查没有执行的必要
+                    break//加了break之后可以更好提升运行速度，提升性能
+                }
+            }
+        }
+
+        if(flag){
+            console.log(i)
+        }
+
+        //停止计时器
+        console.timeEnd('质数练习') //在控制台最后会看到default，这是一个默认的计时器名字
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
